@@ -38,19 +38,19 @@ namespace Ninjas
         /// </summary>
         /// <param name="target">True if attack was a succes</param>
         /// <returns></returns>
-        public bool Attack(Enemy target)
+        public bool Attack(Health target)
         {
             if (target == null)
             {
                 return false;
             }
 
-            if (target.health.IsDead())
+            if (target.IsDead())
             {
                 return false;
             }
 
-            target.health.TakeDamage(attackDamage);
+            target.TakeDamage(attackDamage);
 
             return true;
         }
